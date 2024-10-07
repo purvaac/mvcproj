@@ -1,0 +1,52 @@
+@page
+@model mvcproj.Pages.Customers.newpage
+@{
+    ViewData["Title"] = "newpage";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    
+</div>
+
+CREATE TABLE customer (
+    id INT NOT NULL PRIMARY KEY IDENTITY,
+    firstname NVARCHAR (100) NOT NULL,
+    lastname NVARCHAR (100) NOT NULL,
+    email NVARCHAR(100) NOT NULL UNIQUE,
+    phone NVARCHAR(100) NOT NULL,
+    address NVARCHAR(100) NOT NULL,
+    company NVARCHAR(100) NOT NULL,
+    notes NVARCHAR(max) NOT NULL,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+
+INSERT INTO customer (firstname, lastname, email, phone, address, company, notes) 
+VALUES
+('Emily', 'Brown', 'emily.brown@gmail.com', '1-212-555-0198', 'Chicago, USA', 'BrightTech', ''),
+('James', 'Wilson', 'james.wilson@outlook.com', '1-415-555-1234', 'San Francisco, USA', 'TechSoft', 'VIP customer'),
+('Olivia', 'Smith', 'olivia.smith@yahoo.com', '1-305-555-7777', 'Miami, USA', 'MediaWorks', 'Special discount customer'),
+('Noah', 'Jones', 'noah.jones@gmail.com', '1-718-555-8888', 'Brooklyn, USA', 'DesignStudio', 'Regular client'),
+('Sophia', 'Davis', 'sophia.davis@aol.com', '1-323-555-2222', 'Los Angeles, USA', 'WestCoastCorp', 'Potential new business');
+
+
+
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Microsoft.Extensions.Configuration
+dotnet add package Microsoft.Extensions.Configuration.Json
+
+
+c# 
+c# Extensions
+nuget package manager
+sql server (mssql)
+
+
+dotnet new webapp
+
+dotnet run
